@@ -11,6 +11,11 @@ class MoviesController < ApplicationController
     render component: 'Movie', props:{movie: @movie, store: @store}
   end
 
+  def new
+    @movie = @store.movies.new
+    render component: 'MovieNew', props:{store: @store, movie: @movie}
+  end
+
   def create
     @movie = @store.movies.new(movie_params)
     if @movie.save
@@ -18,11 +23,6 @@ class MoviesController < ApplicationController
     else
       render :new
     end
-  end
-
-  def new
-    @movie = @store.movies.new
-    render component: 'MovieNew', props:{store: @store, movie: @movie}
   end
 
   def edit
@@ -48,6 +48,7 @@ class MoviesController < ApplicationController
   def set_store
     @store = Store.find(params[:store_id])
   end
+  
   def movie_params
     params.require(:movie).permit(:title, :duration, :genre)
   end

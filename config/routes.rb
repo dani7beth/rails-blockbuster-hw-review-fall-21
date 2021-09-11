@@ -2,7 +2,14 @@ Rails.application.routes.draw do
 
   root 'stores#index'
   #resources :controller_name
-  resources :stores
+  resources :stores do
+    resources :movies
+  end
+
+
+  # resources :doctors do
+  #   resources :appointments
+  # end
 
   # resources :parent_controller do
   #  resources :child_controller

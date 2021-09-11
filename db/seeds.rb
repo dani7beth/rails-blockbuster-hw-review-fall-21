@@ -11,4 +11,8 @@
   Store.create(name: Faker::Company.name, location: Faker::Address.full_address)
 end
 
+# doctor = Doctor.create(name: "dr. adskd")
+# doctor.appointments.create()
+# Store.create(name: "sdaf", location: "afffa")
+
 puts "database seeded"
