@@ -9,17 +9,14 @@ const Stores = (props) => {
       return (
         <>
           <p>{store.name}</p>
-          <p>{store.location}</p>
         </>
       );
     });
   };
-  //   array.map((x) => {
-
-  //  })
   return (
     <div>
       <h1>Stores</h1>
+      <a href="/stores/new">Add a store</a>
       {renderStores()}
     </div>
   );
